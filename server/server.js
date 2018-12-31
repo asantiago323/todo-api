@@ -16,10 +16,8 @@ app.post('/todos', (req, res) => {
     });
 
     todo.save().then((doc) => {
-        console.log('Saved \n', JSON.stringify(doc, undefined, 2));
         res.send(doc);
     }, (e) => {
-        console.log('Unable to save', e);
         res.status(400).send(e);
     });
 });
